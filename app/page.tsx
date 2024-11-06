@@ -12,14 +12,14 @@ export default function Index() {
       <h1>Design for AI</h1>
 
       <section>
-        <h2>Posts</h2>
+        <h2 className="mb-4">Posts</h2>
         {posts.map((post) => (
           <ContentLink key={post.slug} {...post} />
         ))}
       </section>
 
       <section>
-        <h2>Resources</h2>
+        <h2 className="mb-4">Resources</h2>
         {resources.map((resource) => (
           <ContentLink key={resource.slug} {...resource} />
         ))}
