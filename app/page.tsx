@@ -9,25 +9,26 @@ export default function Index() {
     <div className="grid gap-12">
       <section>
         <h2>Posts</h2>
-        <div>
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/${post.slug}`}>
-              {post.title}
-            </Link>
-          ))}
-        </div>
+        {posts.map((post) => (
+          <ContentLink key={post.slug} {...post} />
+        ))}
       </section>
 
       <section>
         <h2>Resources</h2>
-        <div>
-          {resources.map((resource) => (
-            <Link key={resource.slug} href={`/${resource.slug}`}>
-              {resource.title}
-            </Link>
-          ))}
-        </div>
+        {resources.map((resource) => (
+          <ContentLink key={resource.slug} {...resource} />
+        ))}
       </section>
     </div>
   );
 }
+
+const ContentLink = ({ title, slug }: { title: string; slug: string }) => (
+  <Link
+    className="text-muted-foreground hover:text-foreground transition-all"
+    href={`/${slug}`}
+  >
+    {title}
+  </Link>
+);
