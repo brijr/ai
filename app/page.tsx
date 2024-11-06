@@ -1,4 +1,6 @@
 import { content } from "@/lib/content";
+import { CircleIcon } from "@radix-ui/react-icons";
+
 import Link from "next/link";
 
 export default function Index() {
@@ -6,7 +8,7 @@ export default function Index() {
   const resources = content.resources;
 
   return (
-    <div className="grid gap-12">
+    <div className="grid gap-24">
       <h1>Design for AI</h1>
 
       <section>
@@ -28,9 +30,10 @@ export default function Index() {
 
 const ContentLink = ({ title, slug }: { title: string; slug: string }) => (
   <Link
-    className="text-muted-foreground hover:text-foreground transition-all"
+    className="text-muted-foreground relative flex items-center gap-2 group hover:text-foreground transition-all"
     href={`/${slug}`}
   >
+    <CircleIcon className="opacity-0 w-3 h-3 absolute -left-5 group-hover:opacity-100 transition-all" />
     {title}
   </Link>
 );
