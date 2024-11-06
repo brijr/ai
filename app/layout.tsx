@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono as FontSans } from "next/font/google";
+import { Manrope as FontSans } from "next/font/google";
 import { Layout } from "@/components/craft";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
