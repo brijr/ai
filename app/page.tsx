@@ -7,6 +7,8 @@ export default function Index() {
 
   return (
     <div className="grid gap-12">
+      <h1>Design for AI</h1>
+
       <section>
         <h2>Posts</h2>
         {posts.map((post) => (
